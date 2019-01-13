@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dataset>
+    <books bookid="1" title="TestBook1" price="22.0" volume="1" publishdate="2018-12-12"/>
+    <books bookid="2" title="TestBook2" price="22.0" volume="1" publishdate="2018-12-12"/>
+</dataset>

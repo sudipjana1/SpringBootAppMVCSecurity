@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Home Page</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/home.css}" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <form th:action="@{/logout}" method="get">
+            <button class="btn btn-md btn-danger btn-block" name="registration" type="Submit">Logout
+            </button>
+        </form>
+        <div class="panel-group" style="margin-top:40px">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <span th:utext="${userName}"></span>
+                </div>
+                <div class="panel-body">
+                    <a href="user/addbook"> 1: Add Book</a>
+                    <br>
+                    <a href="user/searchbook"> 2: Search Book</a>
+                    <br>
+                    <a href="user/deletebook"> 3: Delete Book</a>
+                    <br>
+                    <a href="admin/addsubject"> 4: Add Subject</a>
+                    <br>
+                    <a href="admin/searchsubject"> 5: Search Subject</a>
+                    <br>
+                    <a href="admin/deletesubject"> 6: Delete Subject</a>
+                    <br>
+                    <a href="user/searchbookbytitle"> 7: Search Book By Title</a>
+                    <br>
+                    <a href="admin/searchsubjectbyduration"> 8: Search Subject By Duration</a>
+                    <br>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

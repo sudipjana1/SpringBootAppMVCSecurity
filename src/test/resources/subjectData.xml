@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dataset>
+    <subjects subjectId="1" subtitle="TestSubject1" duration="200" />
+    <subjects subjectId="2" subtitle="TestSubject2" duration="220" />
+</dataset>

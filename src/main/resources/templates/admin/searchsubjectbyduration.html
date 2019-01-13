@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Search Subject Page</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/home.css}" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <h3>Search Subject By Duration</h3>
+    <P>
+        <a href="/home">Home</a>
+    </P>
+    <form autocomplete="off" action="#" th:action="@{/admin/searchsubjectbyduration}" th:object="${subject}" method="get" class="form-horizontal"
+        role="form">
+        <div class="col-sm-9">
+
+            <label>Subject Duration: </label>
+        </div>
+        <div class="col-sm-9">
+
+            <input type="text" th:field="*{durationInHours}" placeholder="durationInHours" class="form-control" />
+        </div>
+        <br/>
+        <input type="submit" value="Submit" />
+    </form>
+    <br>
+    <P th:utext="${suberror}"></P>
+    <br>
+    <div th:if="${suberror == null}">
+        <table border="1">
+            <tr>
+                <th>Sub Id</th>
+                <th>Title</th>
+                <th>Duration</th>
+            </tr>
+            <tr th:each="subject: ${subjects}">
+                <td th:text="${subject.subjectId}"></td>
+                <td th:text="${subject.subtitle}"></td>
+                <td th:text="${subject.durationInHours}"></td>
+                <td>
+                    <table border="1">
+                        <tr>
+                            <th>Book Id</th>
+                            <th>Title</th>
+                            <th>Price</th>
+                            <th>Volume</th>
+                            <th>Pub Date</th>
+                        </tr>
+
+                        <tr th:each="ref: ${subject.references}">
+                            <td th:text="${ref.bookId}"></td>
+                            <td th:text="${ref.title}"></td>
+                            <td th:text="${ref.price}"></td>
+                            <td th:text="${ref.volume}"></td>
+                            <td th:text="${ref.publishDate}"></td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+
+
+
+    </div>
+
+</body>
+
+</html>

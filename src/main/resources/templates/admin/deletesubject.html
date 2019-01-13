@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>Search Subject Page</title>
+<link rel="stylesheet" type="text/css" th:href="@{/css/home.css}" />
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<h3>Delete Subject</h3>
+	<P>
+		<a href="/home">Home</a>
+	</P>
+
+	<form autocomplete="off" action="#" th:action="@{/admin/deletesubject}"
+		th:object="${subject}" method="get" class="form-horizontal"
+		role="form">
+
+		<div class="col-sm-9">
+			<label>Subject ID: </label>
+		</div>
+		<div class="col-sm-9">
+			<input type="text" th:field="*{subjectId}" placeholder="subjectId"
+				class="form-control" />
+		</div>
+		<br /> <input type="submit" value="Submit" />
+	</form>
+	<br>
+	<P th:utext="${suberror}"></P>
+	<br>
+
+</body>
+</html>

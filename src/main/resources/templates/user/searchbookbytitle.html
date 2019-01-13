@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Search Book Page</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/home.css}"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<h3>
+Search Book by Title
+</h3>
+<P><a href="/home">Home</a></P>
+
+    <form autocomplete="off" action="#" th:action="@{/user/searchbookbytitle}"
+		th:object="${book}" method="get" class="form-horizontal"
+		role="form">
+
+		<div class="col-sm-9">
+			<label>Book Title: </label>
+		</div>
+		<div class="col-sm-9">
+			<input type="text" th:field="*{title}" placeholder="title"
+				class="form-control" />
+		</div>
+		<br /> <input type="submit" value="Submit" />
+	</form>
+
+
+    <br>
+	<P th:utext="${bookerror}"></P>
+    <br>
+
+    	<div th:if="${bookerror == null}">
+		<table border="1">
+			<tr>
+				<th>Book Id</th>
+				<th>Title</th>
+                <th>Price</th>
+                	<th>Volume</th>
+				<th>Pub Date</th>
+
+			</tr>
+			<tr th:each="ref: ${books}" >
+				<td th:text="${ref.bookId}"></td>
+				<td th:text="${ref.title}"></td>
+                <td th:text="${ref.price}"></td>
+                	<td th:text="${ref.volume}"></td>
+				<td th:text="${ref.publishDate}"></td>
+
+			</tr>
+		</table>
+    </div>
+
+</body>
+</html>
