@@ -35,4 +35,5 @@ INSERT INTO ROLE VALUES (2,'USER');
 basically these are the roles for each user.
 
 C:\Program Files (x86)\Jenkins\workspace\Cognizant_Sudip_Jana_157648_ProjectManagementRestApi\target\jacoco-report
+C:\java cognizant\Sudip_157648\ProjectManagementApp\AngularApp\dist
 >>>>>>> initial commit
